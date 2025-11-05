@@ -80,6 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
     sincereEnd: 100,
     publicEnd: 187,
     privateEnd: 236,
+    saidYes1: 87,
+    saidYes2: 136,
+    saidYes3: 223,
+    saidYes4: 263,
     outro: 282
   };
 
