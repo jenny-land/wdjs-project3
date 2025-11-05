@@ -30,7 +30,7 @@
 
       <!-- Audio Player -->
       <audio id="audio" controls preload="metadata">
-        <source src="a/low-rider.webm" type="audio/webm" />
+        <source src="a/CYOA-proposalb.wav" type="audio/webm" />
         <source src="a/low-rider.mp3" type="audio/mp3" />
         <p>
           Your browser does not support the audio element.  
@@ -38,16 +38,25 @@
         </p>
       </audio>
 
-      <!-- Custom Audio Controls -->
-      <div class="audio-controls">
-        <button id="ff">Fast Forward</button>
-        <button id="slo">Slow Motion</button>
-        <button id="normal">Normal Speed</button>
-        <select name="pick" id="pick">
-          <option value="">Pick a song</option>
-          <option value="a/low-rider.mp3">Low Rider</option>
-          <option value="a/money.mp3">Money</option>
-        </select>
+       <!-- Audio Section -->
+      <div class="audio-section">
+          <h3>🎵 Soundtrack</h3>
+          <audio id="audio" controls preload="metadata">
+            <source src="a/low-rider.webm" type="audio/webm" />
+            <source src="a/low-rider.mp3" type="audio/mp3" />
+            <p>Your browser does not support the audio element.</p>
+          </audio>
+
+        <!-- Custom Audio Controls -->
+        <div class="audio-controls">
+            <button id="ff">Fast Forward</button>
+            <button id="slo">Slow Motion</button>
+            <button id="normal">Normal Speed</button>
+            <select name="pick" id="pick">
+             <option value="">Pick a song</option>
+             <option value="a/low-rider.mp3">Low Rider</option>
+             <option value="a/money.mp3">Money</option>
+            </select>
       </div>
     </section>
 
