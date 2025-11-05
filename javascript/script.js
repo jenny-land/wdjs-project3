@@ -61,21 +61,25 @@ const cuePoints = {
 
     beachStart: { time: 26 },           // start beach scene 3A
     decision2: { time: 58 },            // Second pause for playful or sincere
+    playEnd: { time: 59},               // plays the last part after choosing button
     endingAnimation1: { time: 87 },     // yes animation for 3A1 (end scene @100)
     outro: { time: 100 }                // Story ends for 3A1
 
     beachStart: { time: 26 },           // start beach scene 3A
-    decision3: { time: 58 },            // Second pause for playful or sincere
+    decision2: { time: 58 },            // Second pause for playful or sincere
+    playEnd: { time: 59},               // plays the last part after choosing button
     endingAnimation2: { time: 87 },     // yes animation for 3A2
     outro: { time: 178 }                // Story ends for 3A2
 
     cafeStart: { time: 58 },           // start cafe scene 3A
-    decision4: { time: 58 },            // Second pause for playful or sincere
+    decision2: { time: 58 },            // Second pause for playful or sincere --maybe change to decision 3 for dif buttons
+    playEnd: { time: 59},               // plays the last part after choosing button
     endingAnimation3: { time: 87 },     // yes animation for 3B1
     outro: { time: 178 }                // Story ends for 3B1
 
     cafeStart: { time: 58 },           // start cafe scene 3A
-    decision5: { time: 58 },            // Second pause for playful or sincere
+    decision2: { time: 58 },            // Second pause for playful or sincere --maybe change to decision 3 for dif buttons
+    playEnd: { time: 59},               // plays the last part after choosing button
     endingAnimation4: { time: 87 },     // yes animation for 3B2
     outro: { time: 178 }                // Story ends for 3B2
 };
