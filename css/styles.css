@@ -141,6 +141,22 @@ select:hover {
   margin-bottom: 30px;
 }
 
+.placeholder-button {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.placeholder-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+}
+
 
 
 section {
