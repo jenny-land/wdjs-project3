@@ -157,6 +157,24 @@ select:hover {
   box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
 }
 
+/* Decorative elements - Hearts -----Add project code was templated from*/
+.heart {
+  position: absolute;
+  opacity: 0.1;
+  font-size: 5em;
+  color: #ffb6c1;
+}
+
+.heart:nth-child(1) { top: 10%; left: 10%; animation: float 6s ease-in-out infinite; }
+.heart:nth-child(2) { top: 20%; right: 15%; animation: float 8s ease-in-out infinite 1s; }
+.heart:nth-child(3) { bottom: 20%; left: 15%; animation: float 7s ease-in-out infinite 0.5s; }
+.heart:nth-child(4) { bottom: 10%; right: 10%; animation: float 9s ease-in-out infinite 1.5s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
 
 
 section {
