@@ -5,39 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
  
 
-  stopBtn.addEventListener("click", () => {
-    video.pause();
-    video.currentTime = 0;
-    playPauseBtn.textContent = "Play";
-  });
-
-  muteBtn.addEventListener("click", () => {
-    video.muted = !video.muted;
-    muteBtn.textContent = video.muted ? "Unmute" : "Mute";
-  });
-
-  volUp.addEventListener("click", () => {
-    video.volume = Math.min(1, video.volume + 0.1);
-  });
-
-  volDown.addEventListener("click", () => {
-    video.volume = Math.max(0, video.volume - 0.1);
-  });
-
-  fsBtn.addEventListener("click", () => {
-    if (!document.fullscreenElement) {
-      videoContainer.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-  });
-
-  subtitlesButton.addEventListener("click", () => {
-    if (subtitlesMenu) {
-      subtitlesMenu.style.display =
-        subtitlesMenu.style.display === "block" ? "none" : "block";
-    }
-  });
 
   /* --- VIDEO INFO --- */
   const infoDisplay = document.createElement("div");
