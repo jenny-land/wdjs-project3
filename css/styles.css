@@ -257,6 +257,62 @@ select:hover {
   }
 }
 
+/* Floating Hearts */
+.floating-heart {
+  position: absolute;
+  font-size: 2.5em;
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: -50px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 110%;
+    opacity: 0;
+  }
+}
+
+/* Restart Button */
+.restart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 20;
+}
+
+.restart-container h2 {
+  color: #ffb6c1;
+  font-size: 2em;
+  text-shadow: 0 0 20px rgba(255, 182, 193, 0.3);
+}
+
+.restart-button {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 107, 157, 0.3);
+  min-width: 200px;
+}
+
+.restart-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(255, 107, 157, 0.5);
+}
+
+.restart-button:active {
+  transform: scale(0.98);
+}
+
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;

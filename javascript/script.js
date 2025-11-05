@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     decision2Beach: 58,
     decision2Cafe: 186,
     playfulEnd: 59,
-    sincereEnd: 187,
+    sincereEnd: 100,
     publicEnd: 187,
     privateEnd: 236,
     outro: 282
