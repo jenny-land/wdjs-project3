@@ -20,16 +20,6 @@ footer {
   padding-top: 1rem;
 }
 
-/* Controls styling */
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  padding: 0.5rem;
-  background: rgba(20, 20, 20, 0.9);
-}
 
 button {
   background-color: #222;
