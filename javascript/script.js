@@ -3,27 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("video");
   const audio = document.getElementById("audio");
 
-  /* --- VIDEO CONTROLS --- */
-  const playPauseBtn = document.getElementById("play-pause");
-  const muteBtn = document.getElementById("mute");
-  const volUp = document.getElementById("vol-inc");
-  const volDown = document.getElementById("vol-dec");
-  const stopBtn = document.getElementById("stop");
-  const fsBtn = document.getElementById("fs");
-  const subtitlesButton = document.getElementById("subtitles");
-  const subtitlesMenu = document.querySelector(".subtitles-menu");
-
-  if (playPauseBtn) {
-    playPauseBtn.addEventListener("click", () => {
-      if (video.paused || video.ended) {
-        video.play();
-        playPauseBtn.textContent = "Pause";
-      } else {
-        video.pause();
-        playPauseBtn.textContent = "Play";
-      }
-    });
-  }
+ 
 
   stopBtn.addEventListener("click", () => {
     video.pause();
