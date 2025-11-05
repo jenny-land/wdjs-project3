@@ -85,8 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Create and show decision buttons
   function showDecisionButtons(title, buttonLabels, buttonActions) {
+    // Remove any existing decision buttons
+    const existingButtons = animationArea.querySelector(".decision-buttons");
+    if (existingButtons) {
+      existingButtons.remove();
+    }
 
-        const decisionContainer = document.createElement("div");
+    const decisionContainer = document.createElement("div");
     decisionContainer.className = "decision-buttons";
     decisionContainer.innerHTML = `<h2>${title}</h2>`;
 
@@ -104,4 +109,19 @@ document.addEventListener("DOMContentLoaded", function () {
     animationArea.appendChild(decisionContainer);
   }
   
+ // Fade out buttons
+  function fadeOutButtons(element) {
+    element.style.animation = "fadeOut 0.5s ease-out forwards";
+    setTimeout(() => {
+      element.remove();
+    }, 500);
+  }
 
+  // Seek to time and play after delay
+  function seekAndPlay(time, delay = 2000) {
+    audio.pause();
+    audio.currentTime = time;
+    setTimeout(() => {
+      audio.play();
+    }, delay);
+  }
