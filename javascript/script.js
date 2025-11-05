@@ -5,49 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
  
 
-
-  /* --- VIDEO INFO --- */
-  const infoDisplay = document.createElement("div");
-  infoDisplay.className = "video-info";
-  infoDisplay.innerHTML = `
-    <span id="time-display">0:00 / 0:00</span>
-    <span id="speed-display">Speed: 1x</span>
-  `;
-  videoContainer.appendChild(infoDisplay);
-
-  const timeDisplay = infoDisplay.querySelector("#time-display");
-  const speedDisplay = infoDisplay.querySelector("#speed-display");
-
-  video.addEventListener("timeupdate", () => {
-    const current = formatTime(video.currentTime);
-    const duration = formatTime(video.duration);
-    timeDisplay.textContent = `${current} / ${duration}`;
-  });
-
-  function formatTime(seconds) {
-    if (isNaN(seconds)) return "0:00";
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60)
-      .toString()
-      .padStart(2, "0");
-    return `${minutes}:${secs}`;
-  }
-
-  function updateSpeedDisplay() {
-    speedDisplay.textContent = `Speed: ${video.playbackRate.toFixed(1)}x`;
-  }
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === ">") {
-      video.playbackRate += 0.25;
-      updateSpeedDisplay();
-    }
-    if (e.key === "<" && video.playbackRate > 0.5) {
-      video.playbackRate -= 0.25;
-      updateSpeedDisplay();
-    }
-  });
-
   /* --- AUDIO CONTROLS --- */
   const ffBtn = document.getElementById("ff");
   const sloBtn = document.getElementById("slo");
