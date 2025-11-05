@@ -20,28 +20,6 @@ footer {
   padding-top: 1rem;
 }
 
-/* Video container centers and sizes properly */
-#video-container {
-  position: relative;
-  width: 80%;
-  max-width: 800px;
-  margin: 0 auto;
-  background: #000;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-}
-
-/* Video fills the container */
-#video {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
 /* Controls styling */
 .controls {
   display: flex;
@@ -65,45 +43,3 @@ button:hover {
   background-color: #444;
 }
 
-/* Subtitles menu */
-.subtitles-menu {
-  display: none;
-  position: absolute;
-  bottom: 3rem;
-  right: 0;
-  background: #666666;
-  list-style-type: none;
-  margin: 0;
-  width: 100px;
-  padding: 10px;
-}
-
-.subtitles-menu li {
-  padding: 0;
-  text-align: center;
-}
-
-.subtitles-menu li button {
-  border: none;
-  background: black;
-  color: white;
-  cursor: pointer;
-  width: 90%;
-  padding: 2px 5px;
-  border-radius: 2px;
-}
-
-/* On-screen video info (time + speed) */
-.video-info {
-  position: absolute;
-  bottom: 4.2rem;
-  left: 10px;
-  color: #fff;
-  font-size: 0.9rem;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 4px 10px;
-  border-radius: 4px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
