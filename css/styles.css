@@ -26,7 +26,28 @@ body {
   gap: 15px;
 }
 
+text-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(255, 182, 193, 0.1);
+}
 
+.text-box h2 {
+  color: #ffb6c1;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.text-box p {
+  line-height: 1.6;
+  color: #e0e0e0;
+  font-size: 1.1em;
+}
 
 section {
   margin-bottom: 3rem;
