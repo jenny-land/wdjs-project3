@@ -125,3 +125,49 @@ document.addEventListener("DOMContentLoaded", function () {
       audio.play();
     }, delay);
   }
+
+  // Monitor audio timeupdate for cue points
+  audio.addEventListener("timeupdate", () => {
+    const currentTime = audio.currentTime;
+
+    // Decision 1 (25 seconds)
+    if (currentTime >= cuePoints.decision1 - 0.5 && currentTime < cuePoints.decision1 + 0.5 && currentPath === null) {
+      audio.pause();
+      showDecisionButtons("Where should we go?", ["🏖️ Beach", "☕ Cafe"], [
+        () => {
+          currentPath = "beach";
+          seekAndPlay(cuePoints.beachStart);
+        },
+        () => {
+          currentPath = "cafe";
+          seekAndPlay(cuePoints.cafeStart);
+        }
+      ]);
+    }
+
+   // Decision 2 (Beach path at 58 seconds)
+    if (currentPath === "beach" && currentTime >= cuePoints.decision2Beach - 0.5 && currentTime < cuePoints.decision2Beach + 0.5) {
+      audio.pause();
+      showDecisionButtons("How should we do this?", ["😄 Playful", "💕 Sincere"], [
+        () => {
+          seekAndPlay(cuePoints.playfulEnd);
+        },
+        () => {
+          seekAndPlay(cuePoints.sincereEnd);
+        }
+      ]);
+    }
+
+    // Decision 2 (Cafe path at 186 seconds)
+    if (currentPath === "cafe" && currentTime >= cuePoints.decision2Cafe - 0.5 && currentTime < cuePoints.decision2Cafe + 0.5) {
+      audio.pause();
+      showDecisionButtons("How should we do this?", ["👥 Public", "🤫 Private"], [
+        () => {
+          seekAndPlay(cuePoints.publicEnd);
+        },
+        () => {
+          seekAndPlay(cuePoints.privateEnd);
+        }
+      ]);
+    }
+  });
