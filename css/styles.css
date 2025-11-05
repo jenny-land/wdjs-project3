@@ -123,6 +123,24 @@ select:hover {
   overflow: hidden;
 }
 
+.animation-area {
+  text-align: center;
+  z-index: 10;
+}
+
+.animation-area h1 {
+  color: #ffb6c1;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(255, 182, 193, 0.3);
+}
+
+.animation-area p {
+  font-size: 1.1em;
+  color: #d0d0d0;
+  margin-bottom: 30px;
+}
+
 
 
 section {
