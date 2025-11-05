@@ -92,6 +92,21 @@ button:hover {
   box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
 }
 
+select {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+}
+
 section {
   margin-bottom: 3rem;
 }
