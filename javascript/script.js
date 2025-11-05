@@ -61,25 +61,25 @@ const cuePoints = {
 
     beachStart: { time: 26 },           // start beach scene 3A
     decision2: { time: 58 },            // Second pause for playful or sincere
-    playEnd: { time: 59},               // plays the last part after choosing button
+    playEnd: { time: 59},               // plays 3A1 choosing button playful
     endingAnimation1: { time: 87 },     // yes animation for 3A1 (end scene @100)
-    outro: { time: 100 }                // Story ends for 3A1
+    outro: { time: 282 }                // Story ends for 3A1 ends @ 286.5
 
     beachStart: { time: 26 },           // start beach scene 3A
     decision2: { time: 58 },            // Second pause for playful or sincere
-    playEnd: { time: 59},               // plays the last part after choosing button
-    endingAnimation2: { time: 87 },     // yes animation for 3A2
-    outro: { time: 178 }                // Story ends for 3A2
+    playEnd: { time: 187},              // plays 3A2 choosing button sincere
+    endingAnimation2: { time: 223 },    // yes animation for 3A2 ends @ 282
+    outro: { time: 282 }                // Story ends for 3A2 ends @ 286.5
 
-    cafeStart: { time: 58 },           // start cafe scene 3A
-    decision2: { time: 58 },            // Second pause for playful or sincere --maybe change to decision 3 for dif buttons
-    playEnd: { time: 59},               // plays the last part after choosing button
-    endingAnimation3: { time: 87 },     // yes animation for 3B1
-    outro: { time: 178 }                // Story ends for 3B1
+    cafeStart: { time: 150 },           // start cafe scene 3A
+    decision2: { time: 186 },           // Second pause for public or private
+    playEnd: { time: 187 },             // plays 3B1 choosing button private
+    endingAnimation3: { time: 223 },    // yes animation for 3B1 ends @ 235
+    outro: { time: 282 }                // Story ends for 3B1 ends @ 286.5
 
-    cafeStart: { time: 58 },           // start cafe scene 3A
-    decision2: { time: 58 },            // Second pause for playful or sincere --maybe change to decision 3 for dif buttons
-    playEnd: { time: 59},               // plays the last part after choosing button
-    endingAnimation4: { time: 87 },     // yes animation for 3B2
-    outro: { time: 178 }                // Story ends for 3B2
+    cafeStart: { time: 159 },           // start cafe scene 3A
+    decision2: { time: 186 },           // Second pause for public or private
+    playEnd: { time: 236 },             // plays 3B2 choosing button private
+    endingAnimation4: { time: 263 },    // yes animation for 3B2 ends @ 282
+    outro: { time: 282 }                // Story ends for 3B2 ends @ 286.5
 };
