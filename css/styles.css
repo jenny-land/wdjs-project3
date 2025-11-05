@@ -49,6 +49,36 @@ text-box {
   font-size: 1.1em;
 }
 
+.audio-section {
+  background: rgba(255, 182, 193, 0.1);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  border-radius: 15px;
+  padding: 15px;
+  backdrop-filter: blur(10px);
+}
+
+.audio-section h3 {
+  color: #ffb6c1;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+audio {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.audio-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
 section {
   margin-bottom: 3rem;
 }
