@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const audio = document.getElementById("audio");
+  const animationArea = document.querySelector(".animation-area");
 
 
 
@@ -47,11 +48,22 @@ document.addEventListener("DOMContentLoaded", function () {
     audioTime.textContent = `${current} / ${duration}`;
   });
 
-  function updateAudioSpeedDisplay() {
-    audioSpeed.textContent = `Speed: ${audio.playbackRate.toFixed(1)}x`;
+  function formatTime(seconds) { //created w AI--
+    if (isNaN(seconds)) return "0:00";          //checks if input is not a valid number
+    const minutes = Math.floor(seconds / 60);   //converts seconds to minutes
+    const secs = Math.floor(seconds % 60)       //calculates remains seconds after min
+      .toString()                               //converts to number to a string
+      .padStart(2, "0");                        //leads w zero
+    return `${minutes}:${secs}`;                // returns in a time format
   }
 
+  function updateAudioSpeedDisplay() { //changes display of playback speed to be consistent w current speed. changes simultaneously
+    audioSpeed.textContent = `Speed: ${audio.playbackRate.toFixed(1)}x`;
+  }
+  
   audio.addEventListener("ratechange", updateAudioSpeedDisplay);
+  updateAudioSpeedDisplay(); // Initialize speed display on load
+
 });
 
 
