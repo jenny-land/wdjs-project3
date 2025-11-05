@@ -83,4 +83,25 @@ document.addEventListener("DOMContentLoaded", function () {
     outro: 282
   };
 
+// Create and show decision buttons
+  function showDecisionButtons(title, buttonLabels, buttonActions) {
+
+        const decisionContainer = document.createElement("div");
+    decisionContainer.className = "decision-buttons";
+    decisionContainer.innerHTML = `<h2>${title}</h2>`;
+
+    buttonLabels.forEach((label, index) => {
+      const btn = document.createElement("button");
+      btn.className = "decision-button";
+      btn.textContent = label;
+      btn.addEventListener("click", () => {
+        buttonActions[index]();
+        fadeOutButtons(decisionContainer);
+      });
+      decisionContainer.appendChild(btn);
+    });
+
+    animationArea.appendChild(decisionContainer);
+  }
   
+
