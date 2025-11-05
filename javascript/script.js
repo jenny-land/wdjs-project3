@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const videoContainer = document.getElementById("video-container");
-  const video = document.getElementById("video");
   const audio = document.getElementById("audio");
 
- 
+
 
   /* --- AUDIO CONTROLS --- */
   const ffBtn = document.getElementById("ff");
@@ -55,3 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   audio.addEventListener("ratechange", updateAudioSpeedDisplay);
 });
+
+
+/* --- Cue Point Timers --- */
+const cuePoints = {
+    decision1: { time: 23 },     // First pause at 23 seconds
+    decision2: { time: 78 },     // Second pause at 78 seconds
+    endingAnimation: { time: 175 }, // Trigger effects at 175 seconds
+    outro: { time: 178 }         // Story ends at 178 seconds
+};
