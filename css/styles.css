@@ -1,10 +1,21 @@
-body {
-  background-color: #111;
-  color: #f0f0f0;
-  font-family: Arial, sans-serif;
-  text-align: center;
+* {
   margin: 0;
-  padding: 1rem;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  gap: 20px;
+  padding: 20px;
 }
 
 section {
