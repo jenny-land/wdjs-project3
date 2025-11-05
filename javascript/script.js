@@ -72,13 +72,13 @@ const cuePoints = {
     outro: { time: 282 }                // Story ends for 3A2 ends @ 286.5
 
     cafeStart: { time: 150 },           // start cafe scene 3A
-    decision2: { time: 186 },           // Second pause for public or private
+    decision3: { time: 186 },           // Second pause for public or private
     playEnd: { time: 187 },             // plays 3B1 choosing button private
     endingAnimation3: { time: 223 },    // yes animation for 3B1 ends @ 235
     outro: { time: 282 }                // Story ends for 3B1 ends @ 286.5
 
-    cafeStart: { time: 159 },           // start cafe scene 3A
-    decision2: { time: 186 },           // Second pause for public or private
+    cafeStart: { time: 150 },           // start cafe scene 3A
+    decision3: { time: 186 },           // Second pause for public or private
     playEnd: { time: 236 },             // plays 3B2 choosing button private
     endingAnimation4: { time: 263 },    // yes animation for 3B2 ends @ 282
     outro: { time: 282 }                // Story ends for 3B2 ends @ 286.5
