@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rich Media Demo with Accessibility</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="javascript/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Media Player with Accessibility</h1>
+
+    <!-- =================== AUDIO SECTION =================== -->
+    <section>
+      <h2>Audio Player</h2>
+      <p>
+        Example audio clip with multiple formats for broad browser support.
+      </p>
+
+      <!-- Audio Player -->
+      <audio id="audio" controls preload="metadata">
+        <source src="a/low-rider.webm" type="audio/webm" />
+        <source src="a/low-rider.mp3" type="audio/mp3" />
+        <p>
+          Your browser does not support the audio element.  
+          <a href="a/low-rider.mp3">Download audio</a>
+        </p>
+      </audio>
+
+      <!-- Custom Audio Controls -->
+      <div class="audio-controls">
+        <button id="ff">Fast Forward</button>
+        <button id="slo">Slow Motion</button>
+        <button id="normal">Normal Speed</button>
+        <select name="pick" id="pick">
+          <option value="">Pick a song</option>
+          <option value="a/low-rider.mp3">Low Rider</option>
+          <option value="a/money.mp3">Money</option>
+        </select>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- =================== VIDEO SECTION =================== -->
+    <section>
+      <h2>Video Player</h2>
+      <p>
+        This video includes multiple formats and subtitle tracks for English, German, and Spanish viewers for improved accessibility.
+      </p>
+
+      <div id="video-container">
+        <video id="video" preload="metadata">
+          <source src="v/leverage-a-synergy.mp4" type="video/mp4" />
+          <source src="v/leverage-a-synergy.webm" type="video/webm" />
+          <track
+            label="English"
+            kind="subtitles"
+            srclang="en"
+            src="/shared-assets/misc/sintel-en.vtt"
+            default />
+          <track
+            label="Deutsch"
+            kind="subtitles"
+            srclang="de"
+            src="/shared-assets/misc/sintel-de.vtt" />
+          <track
+            label="Español"
+            kind="subtitles"
+            srclang="es"
+            src="/shared-assets/misc/sintel-es.vtt" />
+          <p>
+            Your browser does not support the video tag.
+            <a href="v/leverage-a-synergy.mp4">Download video</a>
+          </p>
+        </video>
+
+        <!-- Custom Video Controls -->
+        <div id="video-controls" class="controls">
+          <button id="play-pause" type="button" data-state="play">Play</button>
+          <button id="stop" type="button" data-state="stop">Stop</button>
+
+          <div class="progress">
+            <progress id="progress" value="0">
+              <span id="progress-bar"></span>
+            </progress>
+          </div>
+
+          <button id="mute" type="button" data-state="mute">Mute</button>
+          <button id="vol-inc" type="button" data-state="vol-up">Vol+</button>
+          <button id="vol-dec" type="button" data-state="vol-down">Vol-</button>
+          <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+          <button id="subtitles" type="button" data-state="subtitles">
+            <span>CC</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      "This website is fictitious and created as practice for my JavaScript class @ Diablo Valley College"
+    </footer>
+  </body>
+</html>
