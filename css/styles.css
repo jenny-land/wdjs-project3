@@ -179,7 +179,24 @@ section {
   50% { transform: translateY(-20px); }
 }
 
+/* Scrollbar styling for text box */
+.text-box::-webkit-scrollbar {
+  width: 8px;
+}
 
+.text-box::-webkit-scrollbar-track {
+  background: rgba(255, 182, 193, 0.1);
+  border-radius: 10px;
+}
+
+.text-box::-webkit-scrollbar-thumb {
+  background: rgba(255, 182, 193, 0.3);
+  border-radius: 10px;
+}
+
+.text-box::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 182, 193, 0.5);
+}
 
 
 @media (max-width: 1024px) {
