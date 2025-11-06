@@ -87,7 +87,53 @@ document.addEventListener("DOMContentLoaded", function () {
     outro: 282
   };
 
-// Create and show decision buttons
+// Apply background animation to right section
+  function applyBackgroundAnimation(gradient) {
+    const rightSection = document.querySelector(".right-section");
+    rightSection.style.transition = "background 1s ease-in";
+    rightSection.style.background = gradient;
+    currentBackgroundAnimation = gradient;
+  }
+
+  // Reset background to original
+  function resetBackground() {
+    const rightSection = document.querySelector(".right-section");
+    rightSection.style.transition = "background 1s ease-in";
+    rightSection.style.background = "rgba(255, 255, 255, 0.03)";
+    rightSection.style.borderColor = "rgba(255, 182, 193, 0.2)";
+    currentBackgroundAnimation = null;
+  }
+
+  // Spawn floating hearts
+  function spawnFloatingHearts() {
+    const rightSection = document.querySelector(".right-section");
+    const heartCount = 7;
+    const hearts = [];
+
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+      heart.textContent = "💕";
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.bottom = "-50px";
+      heart.style.animation = `floatUp 3s ease-in forwards ${i * 0.3}s`;
+      rightSection.appendChild(heart);
+      hearts.push(heart);
+    }
+
+    return hearts;
+  }
+
+  // Remove all floating hearts
+  function removeFloatingHearts() {
+    const hearts = document.querySelectorAll(".floating-heart");
+    hearts.forEach(heart => {
+      heart.style.animation = "fadeOut 0.5s ease-out forwards";
+      setTimeout(() => heart.remove(), 500);
+    });
+  }
+
+  // Create and show decision buttons
   function showDecisionButtons(title, buttonLabels, buttonActions) {
     // Remove any existing decision buttons
     const existingButtons = animationArea.querySelector(".decision-buttons");
@@ -112,8 +158,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     animationArea.appendChild(decisionContainer);
   }
-  
- // Fade out buttons
+
+  // Fade out buttons
   function fadeOutButtons(element) {
     element.style.animation = "fadeOut 0.5s ease-out forwards";
     setTimeout(() => {
@@ -130,6 +176,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }, delay);
   }
 
+  // Show restart button
+  function showRestartButton() {
+    const restartContainer = document.createElement("div");
+    restartContainer.className = "restart-container";
+    restartContainer.style.animation = "fadeIn 0.5s ease-out";
+    restartContainer.innerHTML = `<h2>The End 💕</h2>`;
+
+    const restartBtn = document.createElement("button");
+    restartBtn.className = "restart-button";
+    restartBtn.textContent = "Start Over";
+    restartBtn.addEventListener("click", () => {
+      // Reset everything
+      currentPath = null;
+      outroTriggered = false;
+      resetBackground();
+      removeFloatingHearts();
+      restartContainer.remove();
+      audio.currentTime = 0;
+      audio.play();
+    });
+
+    restartContainer.appendChild(restartBtn);
+    animationArea.appendChild(restartContainer);
+  }
+
   // Monitor audio timeupdate for cue points
   audio.addEventListener("timeupdate", () => {
     const currentTime = audio.currentTime;
@@ -140,16 +211,30 @@ document.addEventListener("DOMContentLoaded", function () {
       showDecisionButtons("Where should we go?", ["🏖️ Beach", "☕ Cafe"], [
         () => {
           currentPath = "beach";
+          resetBackground();
+          removeFloatingHearts();
           seekAndPlay(cuePoints.beachStart);
         },
         () => {
           currentPath = "cafe";
+          resetBackground();
+          removeFloatingHearts();
           seekAndPlay(cuePoints.cafeStart);
         }
       ]);
     }
 
-   // Decision 2 (Beach path at 58 seconds)
+    // Beach Start - Apply beach background
+    if (currentPath === "beach" && currentTime >= cuePoints.beachStart - 0.5 && currentTime < cuePoints.beachStart + 0.5) {
+      applyBackgroundAnimation("linear-gradient(135deg, #8B6F47 0%, #D4A574 50%, #E8D4B8 100%)");
+    }
+
+    // Cafe Start - Apply cafe background
+    if (currentPath === "cafe" && currentTime >= cuePoints.cafeStart - 0.5 && currentTime < cuePoints.cafeStart + 0.5) {
+      applyBackgroundAnimation("linear-gradient(180deg, #FFD89B 0%, #FFA500 50%, #87CEEB 100%)");
+    }
+
+    // Decision 2 (Beach path at 58 seconds)
     if (currentPath === "beach" && currentTime >= cuePoints.decision2Beach - 0.5 && currentTime < cuePoints.decision2Beach + 0.5) {
       audio.pause();
       showDecisionButtons("How should we do this?", ["😄 Playful", "💕 Sincere"], [
@@ -173,5 +258,23 @@ document.addEventListener("DOMContentLoaded", function () {
           seekAndPlay(cuePoints.privateEnd);
         }
       ]);
+    }
+
+    // Said Yes animations - Spawn hearts at specific times
+    if ((Math.abs(currentTime - cuePoints.saidYes1) < 0.5 || Math.abs(currentTime - cuePoints.saidYes2) < 0.5 || Math.abs(currentTime - cuePoints.saidYes3) < 0.5 || Math.abs(currentTime - cuePoints.saidYes4) < 0.5) && !outroTriggered) {
+      spawnFloatingHearts();
+    }
+
+    // Outro - Start at 282 seconds
+    if (currentTime >= cuePoints.outro - 0.5 && currentTime < cuePoints.outro + 0.5 && !outroTriggered) {
+      outroTriggered = true;
+      resetBackground();
+      removeFloatingHearts();
+      
+      // Stop audio after 5 seconds
+      setTimeout(() => {
+        audio.pause();
+        showRestartButton();
+      }, 5000);
     }
   });
