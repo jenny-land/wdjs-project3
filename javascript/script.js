@@ -1,3 +1,5 @@
+import { textContent } from "./text-content";
+
 document.addEventListener("DOMContentLoaded", function () {
   const audio = document.getElementById("audio");
   //   const animationArea = document.querySelector(".animation-area");
@@ -179,6 +181,13 @@ function seekAndPlay(time) {
   setTimeout(() => {
     audio.play();
   }, DELAY);
+}
+
+function setTextContent(content) {
+  const textContent = document.getElementById("text-content");
+  if (textContent) {
+    textContent.innerHTML = content;
+  }
 }
 
 // Show restart button
